@@ -30,7 +30,7 @@
                     <img src="{{music.thumbnail.url}}" alt="">
                 </div>
                 <div class="music-title">
-                    <a href="{{music.video_link}}">{{music.song_title}}</a>
+                    <a href="{{music.video_link}}">{{music.song_title|truncatewords:7}}</a>
                 </div>
             </div>
             {% endfor %}

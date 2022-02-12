@@ -119,7 +119,7 @@
                     <img src="{{latest.thumbnail.url}}" alt="">
                 </div>
                 <div class="poster-name">
-                    <h2>{{latest.song_title}}</h2>
+                    <h2>{{latest.song_title|truncatewords:7 }}</h2>
                 </div>
             </div>
             {% endfor %}
