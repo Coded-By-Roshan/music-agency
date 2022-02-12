@@ -1,0 +1,95 @@
+.contact{
+    min-height: 100vh;
+    background: url(https://images.pexels.com/photos/1587927/pexels-photo-1587927.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1) no-repeat center ;
+    width: 100%;
+    background-size: cover;
+    /* align-items: center; */
+}
+.container{
+    margin-top: 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+.contact-info{
+    display: flex;
+    color: white;
+    flex-direction: column;
+    min-width: 20%;
+
+}
+.sym{
+    width: 50px;
+}
+.ft{
+    font-size: 30px;
+    color: #ff7328;
+    align-items: center;
+}
+.contact-info .data h2{
+    color: #ff7328;
+}
+.con-box{
+    align-items: center;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+.data{
+    display: block;
+}
+.form{
+    background-color: white;
+    display: block;
+    align-items: center;
+    text-align: center;
+    width: 32%;
+    padding: 50px;
+}
+.form form{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+.form form .input{
+    margin: 20px 0;
+    outline: none;
+    border: none;
+    padding: 5px;
+    border-bottom: 2px solid black;
+    background-color: transparent;
+    width: 324px;
+}
+::placeholder{
+    color: black;
+}
+.send-btn{
+    text-align: center;
+border-radius: 5px;
+padding: 10px;
+border: none;
+outline: none;
+background-color: #ff7328;
+font-size: 20px;
+cursor: pointer;
+}
+@media screen and (max-width: 700px){
+
+.container{
+flex-direction: column;
+}
+.form form .input{
+width: auto;
+}
+.form{
+padding: 30px;
+margin-top: 50px;
+width: 80%;
+}
+}

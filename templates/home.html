@@ -1,0 +1,175 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dongle:wght@300&family=Noto+Sans&family=Open+Sans&display=swap"
+        rel="stylesheet">
+    <link rel="shortcut icon" href="{% static 'media/logo.png' %}" type="image/x-icon">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="{% static 'CSS/home.css' %}">
+    {% if title %}
+    <title>PAR-{{title}}</title>
+    {% else %}
+    <title>PAR-Music Agency</title>
+    {% endif %}
+</head>
+
+<body>
+    {% block body %}
+    <div class="landing">
+        <div class="video">
+            <video src="{% static 'media/cover-video.mp4' %}" autoplay loop muted></video>
+        </div>
+        {% block nav %}
+        <nav class="nav hide">
+            <div class="humb" id="humb">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="logo">
+                <img src="{% static 'media/logo.png' %}" alt="">
+            </div>
+            <div class="menus">
+                <ul>
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li><a href="{% url 'music' %}">Music</a></li>
+                    <!-- <li><a href="">About</a></li> -->
+                    <li><a href="{% url 'contact' %}">Contact</a></li>
+
+                </ul>
+            </div>
+        </nav>
+        {% endblock nav %}
+        <div class="slogan">
+            <div class="text">
+                <h1>Uploaded on people's <span class="special">heart</span></h1>
+            </div>
+            <div class="options">
+                <a href="{% url 'music' %}" class="btn bg-filled">Our Work</a>
+                <a href="{% url 'contact' %}" class="btn">Get in touch</a>
+            </div>
+        </div>
+    </div>
+    <div class="quality">
+        <div class="heading">
+            <h1>You Deserve Unique and Outstanding Music & Sound</h1>
+        </div>
+        <div class="specials">
+            <div class="box">
+                <div class="simg">
+                    <i class="fas fa-headset sfas"></i>
+                </div>
+                <div class="simg-name">
+                    <h3>Music production</h3>
+                    <ul>
+                        <li>Songwriting</li>
+                        <li>Arranging</li>
+                        <li>Vocal production</li>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="box">
+                <div class="simg">
+                    <i class="fas fa-microphone sfas"></i>
+                </div>
+                <div class="simg-name">
+                    <h3>Recording</h3>
+                    <ul>
+                        <li>Voice Over</li>
+                        <li>Bands</li>
+                        <li>Podcasts</li>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="box">
+                <div class="simg">
+                    <i class="fas fa-music sfas"></i>
+                </div>
+                <div class="simg-name">
+                    <h3>Mixing & Mastering</h3>
+                    <ul>
+                        <li>Sound Design</li>
+                        <li>Dolby Atoms</li>
+                        <li>Song Identities</li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <div class="latest-songs">
+        <div class="heading">
+            <h1>Latest Songs</h1>
+        </div>
+        <div class="songs">
+            {% for latest in latests %}
+            <div class="posters">
+                <div class="poster-img">
+                    <img src="{{latest.thumbnail.url}}" alt="">
+                </div>
+                <div class="poster-name">
+                    <h2>{{latest.song_title}}</h2>
+                </div>
+            </div>
+            {% endfor %}
+           
+        </div>
+
+    </div>
+    {% endblock body %}
+    {% block footer %}
+    <footer>
+        <div class="info">
+            <div class="info-box">
+                <ul>
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li><a href="{% url 'music' %}">Music</a></li>
+
+                    <li><a href="{% url 'contact' %}">Contact</a></li>
+                </ul>
+            </div>
+            {% for info in infos %}
+            <div class="info-box">
+                <ul>
+                    <li class="fab fa-facebook ficon"><a href="{{info.facebook_link}}" target="_blank">Facebook</a></li>
+                    <li class="fab fa-instagram ficon"><a href="{{info.instagram_link}}" target="_blank">Instagram</a></li>
+                    <li class="fab fa-youtube ficon"><a href="{{info.youtube_channel}}" target="_blank">Youtube</a></li>
+                    <li class="fab fa-twitter ficon"><a href="{{info.facebook_link}}" target="_blank">Twitter</a></li>
+                </ul>
+            </div>
+            <div class="info-box">
+
+                <ul>
+                    <li class="fas fa-map-marker-alt ficon"><span>{{info.location}}</span></li>
+                    <li class="fas fa-phone-volume ficon"><span>{{info.phone_number}}</span> </li>
+                    <li class="far fa-envelope ficon"><span>{{info.email}}</span></li>
+
+                </ul>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="end">
+            <p>Copyright &#169; 2022 by Dev_Ros. All Rights Reserved.</p>
+        </div>
+    </footer>
+    {% endblock footer %}
+</body>
+
+<script src="{% static 'CSS/home.js' %}"></script>
+{% for message in messages %}
+<script>
+    alert("{{message}}")
+</script>
+{% endfor %}
+</html>

@@ -1,0 +1,41 @@
+{% extends 'home.html' %}
+{% load static %}
+<title>PAR | MUSIC</title>  
+{% block body%}
+<link rel="stylesheet" href="{% static 'CSS/music.css' %}">
+    <div class="music">
+        <nav class="nav hide">
+            <div class="humb" id="humb">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="logo">
+                <img src="{% static 'media/logo.png' %}"
+                    alt="">
+            </div>
+            <div class="menus">
+                <ul>
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li><a href="{% url 'music' %}">Music</a></li>
+                    <!-- <li><a href="">About</a></li> -->
+                    <li><a href="{% url 'contact' %}">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="collection">
+            {% for music in musics %}
+            <div class="musics">
+                <div class="banner">
+                    <img src="{{music.thumbnail}}" alt="">
+                </div>
+                <div class="music-title">
+                    <a href="{{music.video_link}}">{{music.song_title}}</a>
+                </div>
+            </div>
+            {% endfor %}
+         
+        </div>
+    </div>  
+{% endblock body %}
+

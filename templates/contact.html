@@ -1,0 +1,70 @@
+{% extends 'home.html' %}
+{% load static %}
+  
+{% block body %}
+<link rel="stylesheet" href="{% static 'CSS/contact.css' %}">
+    <div class="contact">
+    <nav class="nav hide">
+        <div class="humb" id="humb">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="logo">
+            <img src="{% static 'media/logo.png' %}"
+                alt="">
+        </div>
+        <div class="menus">
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'music' %}">Music</a></li>
+                <!-- <li><a href="">About</a></li> -->
+                <li><a href="{% url 'contact' %}">Contact</a></li>
+                
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        {% for info in infos %}
+        <div class="contact-info">
+            <div class="address con-box">
+                <div class="sym">
+                    <i class="fas fa-map-marker-alt ft"></i>
+                </div>
+                <div class="data con-box">
+                    <h2>ADDRESS</h2>
+                    <p>{{info.location}}</p>
+                </div>
+            </div>
+            <div class="phone con-box">
+                <div class="sym">
+                    <i class="fas fa-mobile-alt ft"></i>
+                </div>
+                <div class="data">
+<h2>PHONE</h2>
+<p>{{info.phone_number}}</p>
+                </div>
+            </div>
+            <div class="email con-box">
+                <div class="sym">
+                    <i class="far fa-envelope ft"></i>
+                </div>
+                <div class="data">
+                    <h2>EMAIL</h2>
+                    <p>{{info.email}}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        <div class="form">
+            <h1>SEND MESSAGE</h1>
+            <form action="{% url 'contact' %}" method="post"> {% csrf_token %}
+                <input type="text" name="name" class="input" placeholder="Full Name">
+                <input type="email" name="email" class="input" placeholder="Email">
+                <textarea name="message" id="message" class="input" placeholder="Type your message"></textarea>
+                <button type="submit" class="send-btn">Send</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

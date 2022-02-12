@@ -1,0 +1,332 @@
+*{
+    padding: 0;
+    margin: 0;
+   
+}
+body{
+    overflow-x: hidden;
+}
+ul,li{
+    list-style: none;
+    
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+ nav .humb{
+    width: 100px;
+    height: 80px;
+    display: none;
+    /* display: flex; */
+    flex-direction: column;
+    position: absolute;
+    top: 7px;
+    left: 50px;
+    cursor: pointer;
+   
+   
+
+}
+.sticky{
+    height: 66px;
+    position: fixed;
+    width: 100%;
+    background-color: #4b4b4b;
+    top: 0;
+}
+ nav .humb span{
+     transition: .20s all ease;
+    margin-top: 15px;
+    width: 85px;
+    height: 7px;
+    background-color: tomato;
+   
+}
+.landing{
+    /* background-color: rgb(5, 255, 255); */
+    display: flex;
+    flex-direction: column;
+    /* width: 100vw; */
+    min-height: 100vh;
+    overflow: hidden;
+
+}
+.logo{
+    /* filter: invert(1); */
+    width: 102px;
+    height: 93px;
+}
+.logo img{
+    border-radius: 30px;
+    height: 100%;
+    width: 100%;
+    
+}
+nav{
+    align-items: center;
+    /* min-height: 100px; */
+    font-family: 'Open Sans', sans-serif;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+.menus ul{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+}
+.menus li{
+    margin: 0 20px;
+    padding: 5px;
+}
+.menus li a{
+    color: white;
+    font-size: 30px;
+    font-weight: 600;
+}
+.menus li a:hover{
+    color: #ff7328;
+}
+.special{
+    color: red;
+}
+
+ video{
+    z-index: -1;
+    position:fixed;
+}
+.slogan{
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    display: block;
+    margin: auto;
+}
+.slogan h1{
+    font-size: 6rem;
+    color: white;
+}
+.options{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 25px;
+    margin: 30px 0;
+}
+.options a{
+    font-weight: 700;
+}
+.options .btn{
+    font-weight: 500;
+    cursor: pointer;
+    border: 5px solid white;
+    margin: 40px 10px;
+    padding: 10px;
+    outline: none;
+    background: transparent;
+    color: #ff7328;
+    font-size: 22px;
+    border-radius: 8px;
+}
+.bg-filled{
+    background-color: #ff7328;
+}
+.options .btn:hover{
+    background-color: #ff7328;
+    color: white;
+
+}
+.quality{
+    padding: 20px;
+    /* width: 100vw; */
+    min-height: 50vh;
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+}
+.heading{
+    color: #ff7328;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.specials{
+    flex-wrap: wrap;
+    margin: 20px 0;
+    display: flex;
+    justify-content: space-around;
+}
+.specials .box{
+    font-family: 'Times New Roman', Times, serif;
+    padding: 25px;
+    
+
+}
+i.sfas{
+    color: #ff7328;
+    font-size: 50px;
+}
+
+.specials .box .simg{
+    margin: 20px;
+}
+.specials .box .simg-name{
+    margin: 20px;
+}
+.specials .box .simg-name h3{
+    margin: 10px;
+}
+.specials .box .simg-name ul li{
+    padding: 10px;
+    font-size: 17px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.latest-songs{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    min-height: 50vh;
+    background: rgb(5, 24, 59);
+}
+.latest-songs .posters{
+    display: flex;
+    flex-direction: column;
+    margin: 10px 50px;
+}
+.latest-songs .songs{
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-around;
+    
+}
+.latest-songs .posters .poster-img{
+    width: 300px;
+    height: 400px;
+    margin: 10px;
+}
+.latest-songs .posters .poster-img img{
+    height: 100%;
+    width: 100%;
+}
+footer{
+    background: #4b4b4b;
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.info{
+    align-items: center;
+    text-align: center;
+    flex-wrap: wrap;
+    border-bottom: 2px solid tomato;
+    display: flex;
+    justify-content: space-around;
+}
+.info .info-box{
+    align-items: center;
+    text-align: center;
+    /* max-width: 30%; */
+}
+.info .info-box ul{
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+
+}
+.info .info-box ul li{
+    padding: 10px;
+   
+}
+.info a{
+    margin: 0 10px ;
+}
+footer .ficon{
+    color:tomato
+}
+footer span{
+    color: white;
+    padding: 0 10px;
+}
+footer .end{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 20px;
+    align-items: center;
+}
+.bend span:nth-child(1){
+    transform: rotate(30deg);
+}
+.bend span:nth-child(2){
+    display: none;
+}
+.bend span:nth-child(3){
+    position: absolute;
+    top: 3px;
+    transform: rotate(-30deg);
+}
+
+@media screen and (max-width: 700px){
+
+    .container{
+        flex-direction: column;
+    }
+    footer .info{
+        flex-direction: column;
+
+    }
+    .logo{
+        display: none;
+
+    }
+    .quality .box{
+        min-width: 40%;
+    }
+
+}
+@media screen and (max-width: 600px){
+
+    .hide .menus{
+        display: none;
+    }
+    .menus li{
+        margin: 80px 20px;
+    }
+    .options{
+        display: flex;
+        flex-direction: column;
+    }
+    .slogan{
+        margin: 100px 10px;
+    }
+ nav .humb{
+        display: flex;
+    }
+    nav ul{
+        flex-direction:column ;
+    }
+
+    .slogan h1{
+        font-size: 4rem;
+    }
+    .quality{
+        padding:0;
+    }
+    .latest-songs .posters{
+        margin: 10px 0;
+    }
+    .sticky{
+        min-height: 50px;
+        height: fit-content;
+        background: #4b4b4b;
+    }
+
+}
